@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\OrdenDetalle;
 use Illuminate\Http\Request;
 
+
 class OrdenDetalleController extends Controller
 {
     /**
@@ -25,7 +26,7 @@ class OrdenDetalleController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PostOrdenDetalleRequest $request)
     {
         //
         return OrdenDetalle::create($request->all());

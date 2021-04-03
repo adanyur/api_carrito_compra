@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Orden;
 use Illuminate\Http\Request;
+use App\Http\Requests\PostOrdenRequest;
 
 class OrdenController extends Controller
 {
@@ -24,7 +25,7 @@ class OrdenController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PostOrdenRequest $request)
     {
         //
         return Orden::create($request->all());
@@ -39,7 +40,6 @@ class OrdenController extends Controller
     public function show(Orden $orden)
     {
         //
-
         return Orden::find($orden);
     }
 
@@ -52,9 +52,7 @@ class OrdenController extends Controller
      */
     public function update(Request $request, Orden $orden)
     {
-        //
-
-        return $orden->update($request->all());
+         return $orden->update($request->all());
     }
 
     /**
@@ -65,7 +63,6 @@ class OrdenController extends Controller
      */
     public function destroy(Orden $orden)
     {
-        //
         return $orden->delete();
     }
 }

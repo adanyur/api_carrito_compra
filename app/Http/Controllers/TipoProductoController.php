@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\TipoProducto;
 use Illuminate\Http\Request;
+use App\Http\Requests\PostTipoProductoRequest;
 
 class TipoProductoController extends Controller
 {
@@ -24,7 +25,7 @@ class TipoProductoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PostTipoProductoRequest $request)
     {
         //
         return TipoProducto::create($request->all());

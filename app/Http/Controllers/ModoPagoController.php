@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\ModoPago;
 use Illuminate\Http\Request;
+use App\Http\Requests\PostModoPagoRequest;
 
 class ModoPagoController extends Controller
 {
@@ -23,7 +24,7 @@ class ModoPagoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PostModoPagoRequest $request)
     {
         return Modopago::create($request->all());
     }
